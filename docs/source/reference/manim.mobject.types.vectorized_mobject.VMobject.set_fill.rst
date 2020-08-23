@@ -1,0 +1,6 @@
+manim.mobject.types.vectorized\_mobject.VMobject.set\_fill
+==========================================================
+
+.. currentmodule:: manim.mobject.types.vectorized_mobject
+
+.. automethod:: VMobject.set_fill
