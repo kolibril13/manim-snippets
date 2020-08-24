@@ -1,4 +1,0 @@
-Changelog
-========================
-
-the newest updates
