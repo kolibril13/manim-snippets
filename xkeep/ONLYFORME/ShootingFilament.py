@@ -32,4 +32,4 @@ from pathlib import Path
 
 if __name__ == "__main__":
     script = f"{Path(__file__).resolve()}"
-    os.system(f"manim  -m --custom_folders  -i  --config_file 'my_config.cfg' " + script)
+    os.system(f"manim  -m --custom_folders  -p  --config_file 'my_config.cfg' " + script)
