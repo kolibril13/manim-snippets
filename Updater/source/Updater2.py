@@ -1,4 +1,6 @@
-```python
+from manim import *
+
+
 class Updater2(Scene):
     def construct(self):
         path = VMobject()
@@ -18,6 +20,10 @@ class Updater2(Scene):
         self.play(dot.shift, UP)
         self.play(dot.shift, LEFT)
         self.wait()
-```
 
-![alt text](source/Updater2.gif)
+
+from pathlib import Path
+
+if __name__ == "__main__":
+    script = f"{Path(__file__).resolve()}"
+    os.system(f"manim   --custom_folders  -p  -i -m -c 'BLACK' --config_file 'my_config.cfg' " + script)

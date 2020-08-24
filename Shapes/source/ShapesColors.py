@@ -1,10 +1,13 @@
 from manim import *
 
-class Test1(Scene):
+
+
+class ShapesColors(Scene):
     def construct(self):
-        dot = Dot().set_color(BLUE)
-        self.add(dot)
-        self.wait(1)
+        color_template = [GREEN, BLUE]
+        colors = color_gradient(color_template, 256)
+        for num,co in enumerate(colors):
+            self.add(Dot(color = co).shift(LEFT*2+RIGHT*0.02*num).scale(4))
 
 from pathlib import Path
 if __name__ == "__main__":
