@@ -64,3 +64,43 @@ class ConnectingMatplotlib(Scene):
 ```
 
 ![alt text](source/ConnectingMatplotlib.gif)
+
+new approach:
+
+```python
+from manim import *
+import matplotlib.pyplot as plt
+
+
+def my_function(amplitude, x):
+    return amplitude * np.sin(x)
+
+
+def get_image_plot(amplitude, x):
+    fig, ax = plt.subplots()
+    ax.plot(x, my_function(amplitude, x))
+    ax.set_ylim(-1, 1)
+    fig.canvas.draw()
+    img = ImageMobject(fig.canvas.buffer_rgba()).scale(4.5)
+    plt.close(fig)
+    return img
+
+
+class ConnectingMatplotlib(Scene):
+    def construct(self):
+        x_values = np.linspace(0, 30, 400)
+        amp1 = 0.5
+        amp2 = 1
+        tr_amplitude = ValueTracker(amp1)
+        image = get_image_plot(amp1, x_values)
+        self.add(image)
+
+        def update_image(mob):
+            new_mob = get_image_plot(tr_amplitude.get_value(), x_values)
+            mob.become(new_mob)
+
+        image.add_updater(update_image)
+
+        self.play(tr_amplitude.set_value, amp2, run_time=3)
+
+```
