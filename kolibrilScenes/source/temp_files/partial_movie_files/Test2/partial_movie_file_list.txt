@@ -1,2 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:/home/jan-hendrik/projects/manim-snippets/kolibrilScenes/source/temp_files/partial_movie_files/Test2/64312035_1-0_351406219.mp4'
